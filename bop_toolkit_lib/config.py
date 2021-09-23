@@ -2,7 +2,8 @@
 # Center for Machine Perception, Czech Technical University in Prague
 import os
 from pathlib import Path
-COSYPOSE_DIR = Path(os.environ['COSYPOSE_DIR'])
+# COSYPOSE_DIR = Path(os.environ['COSYPOSE_DIR'])
+COSYPOSE_DIR = Path('/home/zhixin/projects/cosypose')
 
 """Configuration of the BOP Toolkit."""
 

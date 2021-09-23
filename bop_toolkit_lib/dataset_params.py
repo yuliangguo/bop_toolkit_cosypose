@@ -156,7 +156,7 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
   depth_ext = '.png'
 
   rgb_ext = '.png'
-  if split_type == 'pbr':
+  if split_type == 'pbr' or 'pbr_w_normal':
     # The photorealistic synthetic images are provided in the JPG format.
     rgb_ext = '.jpg'
 
@@ -203,6 +203,7 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
         'canon': (1900, 1900),
         'render_reconst': (1280, 1024),
         'pbr': (720, 540),
+        'pbr_w_normal': (720, 540),
         'synthetless': (400, 400),
       },
       'test': {
@@ -325,7 +326,8 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
       p['scene_ids'] = {
         'real': list(range(48)) + list(range(60, 92)),
         'pbr': None,  # Use function get_present_scene_ids().
-        'synt': list(range(80))
+        'synt': list(range(80)),
+        'pbr_w_normal': None,  # Use function get_present_scene_ids()
       }[split_type]
     elif split == 'test':
       p['scene_ids'] = list(range(48, 60))
